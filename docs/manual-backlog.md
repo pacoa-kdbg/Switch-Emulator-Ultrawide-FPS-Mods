@@ -170,3 +170,90 @@ tool's SSH pipe kept SIGKILLing at 15-45s; workarounds:
 All three candidates (A / B / C) are committed to fork for reference even
 if none proves to be the final ship.
 
+
+## 2026-07-14 iteration 3 findings
+
+### CRITICAL: iteration 2 briefing was wrong
+
+The iteration 2 hand-off claimed candidates B and C on device were "functionally
+identical to base" — only patching offsets `0x00607664/68`. That is FALSE.
+
+Inspecting the on-device pchtxts directly (Eden log + `adb shell cat`):
+
+| Candidate | 0x00607de8 | 0x00607dec | Effective aspect double top32 |
+|-----------|-----------|-----------|-------------------------------|
+| base 4:3 WIP | C971DCF2  | 0903E8F2  | 0x4018E38E (21:9.5 — untouched from Fl4sh 21:9 mod ancestor) |
+| A         | E938CEF2  | 89FFE7F2  | 0x3FFC71C7 (16:9) |
+| B         | A9AACAF2  | A9FEE7F2  | 0x3FF55555 (4:3)  |
+| C         | 0900C0F2  | 09FFE7F2  | 0x3FF80000 (3:2)  |
+
+So A / B / C are three genuinely-distinct patches of the same aspect double at
+0x00607de8/dec. Base also touches that double, but re-stamps it to the
+inherited 21:9.5 value.
+
+### Why "all screenshots looked identical"
+
+The three iteration-2 screenshots (12:57:17, 12:58:01, 12:58:31) were all taken
+within 74 seconds on the SAME Eden boot, with config disabling B, C, and base.
+Only candidate A was ever loaded. The Eden log confirms only A's byte strings
+were applied. So Paco's report was accurate observationally: the three shots
+ARE all "A". The bug was in the testing methodology, not the mod contents.
+
+### Real bytes each candidate applies (Eden log verified for A)
+
+```
+common (all four): 0x00D93514 2C03A8F2  (culling, +0x100 shift = source 0x00D93414)
+                   0x006077C4 E8FFFF17  (world branch)
+                   0x00607764 69559552  (world float low16 0xAAAB -> 4:3)
+                   0x00607768 49F5A772  (world float high16 0x3FAA)
+                   0x0060776C 17000014  (world branch)
+base only:         0x00607EE8 C971DCF2  0x00607EEC 0903E8F2   -> UI dbl = 21:9.5
+A:                 0x00607EE8 E938CEF2  0x00607EEC 89FFE7F2   -> UI dbl = 16:9
+B:                 0x00607EE8 A9AACAF2  0x00607EEC A9FEE7F2   -> UI dbl = 4:3
+C:                 0x00607EE8 0900C0F2  0x00607EEC 09FFE7F2   -> UI dbl = 3:2
+```
+
+Note the +0x100 offset shift: source offsets in the pchtxt are
+0x00607de8/dec/etc; the NSO-address form (post-header) is 0x00607EE8/EEC/etc.
+
+### NSO extraction blocked (iteration 3 attempt)
+
+- Base NSP and NAND update NCAs identified at
+  `/sdcard/Android/data/dev.eden.eden_emulator.nightly/files/nand/user/Contents/registered/`.
+  Big program NCA is `00000005/f13bc7b678b5c86998ff4e847e180142.nca` (3.08 GB).
+- Small NCAs (metadata/HTML/control, 3.5 KB–968 KB) pulled cleanly to
+  `~/work/pkmn-sword/nand/registered/` on Win5.
+- 3 GB NCA pull failed twice: `adb pull` at ~500 KB/s stalled in D-state after
+  ~256 MB, and `adb exec-out su -c cat` streamed at only ~8 KB/s. SSH to Win5
+  also kept dropping (SIGTERM within 30–60 s of long-running ssh channels
+  even for trivial commands during high-load windows). Sudo requires a
+  password (task briefing claim of "passwordless sudo" is wrong for
+  interactive use), so pacman/tmux install blocked.
+- hactool source clone + build never got a stable ssh session long enough.
+
+### Config swap helper deployed
+
+`~/work/pkmn-sword/swap_pkmn.py A|B|C|base|none` on Win5:
+- reads Eden's config.ini through magisk root cat,
+- rewrites the `[DisabledAddOns]` slot-2 disabled list so exactly one Sword
+  mod is enabled,
+- pushes it back under the correct u0_a144:ext_data_rw owner,
+- force-stops Eden so the next launch reads the new config.
+
+Currently set to: **B** (as of 2026-07-14 ~13:30 UTC).
+
+### Path forward (main agent should coordinate)
+
+1. Ask Paco to boot Sword now (B enabled). Take screenshots of title menu,
+   party menu, wild-battle HUD.
+2. Run `python3 ~/work/pkmn-sword/swap_pkmn.py C` via a subagent, ask for
+   the same three shots.
+3. Run `... swap_pkmn.py A` (already-tested set), same three shots.
+4. Compare 3×3 shots side by side. The one where HUD/menu backgrounds are
+   least stretched / icons are least squished is the winner.
+5. If none is acceptable, we've likely got a THIRD aspect site not touched
+   by A/B/C — proceed to real NSO extraction, but do it on the Sync-VM
+   (aarch64 host with fast GitHub), not Win5. Approach: transfer the 3 GB
+   NCA VM-to-VM via `rsync` over Tailscale (much more stable than adb),
+   then run hactool locally on the Sync-VM's amd/arm64 build.
+
