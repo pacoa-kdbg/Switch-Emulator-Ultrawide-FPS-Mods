@@ -1,0 +1,20 @@
+@nsobid-3AB632DEE82D59448599B2291F30994A
+
+# Pokemon Mystery Dungeon Rescue Team DX [01003D200BAA2000] v1.0.2 - 3:2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 Aspect Ratio optimized for 3:2
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+018a4cbc 1E008052 // generated 3:2 aspect low16 for w30
+018a4cc0 1EF8A772 // generated 3:2 aspect high16 for w30
+018a4cc4 C003271E
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174

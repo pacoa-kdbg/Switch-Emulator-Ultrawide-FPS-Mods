@@ -1,0 +1,19 @@
+@nsobid-4B713267A882DA35B4789A5E45823AC4
+
+# FIFA 23 Legacy Edition [01001C8016B4E000][USA] v1.0.3 - uw
+
+@flag print_values
+@flag offset_shift 0x100
+
+// uw
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+00fe1280 1E008052 // generated 3:2 aspect low16 for w30
+00fe1288 1EF8A772 // generated 3:2 aspect high16 for w30
+00fe128c C003271E
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174

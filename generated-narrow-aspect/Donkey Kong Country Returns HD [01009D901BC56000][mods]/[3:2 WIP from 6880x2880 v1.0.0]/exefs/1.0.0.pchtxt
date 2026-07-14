@@ -1,0 +1,50 @@
+@nsobid-8AC516E8A5D2564B8A2DFC11D3907B9F
+
+# Donkey Kong Country Returns HD [01009D901BC56000] 1.0.0 - 3:2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 3:2 WIP optimized for 3:2 2x resolution
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+01f9dd80 09008052 // generated 3:2 aspect low16 for w9
+01f9dd84 09F8A772 // generated 3:2 aspect high16 for w9
+0232904c 09008052 // generated 3:2 aspect low16 for w9
+02329050 09F8A772 // generated 3:2 aspect high16 for w9
+028347a0 09008052 // generated 3:2 aspect low16 for w9
+028347a4 09F8A772 // generated 3:2 aspect high16 for w9
+0284015c 09008052 // generated 3:2 aspect low16 for w9
+02840160 09F8A772 // generated 3:2 aspect high16 for w9
+02904920 09008052 // generated 3:2 aspect low16 for w9
+02904924 09F8A772 // generated 3:2 aspect high16 for w9
+00f2dbe8 03688152
+00f2dbf4 015C8352
+00f2dc90 03688152
+00f2dc8c 015C8352
+00f2de24 02688152
+00f2de30 015C8352
+021ab840 03688152
+021ab848 015C8352
+028d6ab0 03688152
+028d6ab8 015C8352
+00e2154c 085C8352
+00e21560 08688152
+00f0db80 085C8352
+00f0db84 09688152
+00f0dbac 085C8352
+00f0dbb4 08688152
+00f0bfd8 025C8352
+00f0bfc8 03688152
+00f0bfc4 09008452
+00f2dde8 02008452
+014cc398 015C83D2
+014cc39c 0168C1F2
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

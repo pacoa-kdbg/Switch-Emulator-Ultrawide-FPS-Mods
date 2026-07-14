@@ -1,0 +1,51 @@
+@nsobid-B9B166DF1DB90BAFFBD8027EB0DF14D6949D6A11
+
+# Super Smash Bros. Ultimate [01006A800016E000] 13.0.1 - 3:2 Original Camera
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 Aspect Ratio optimized for 3:2
+// Use strecth to window option
+// Menus, start screen and texts also adjusted to 3:2
+// This mod keeps the original camera zoom, only adjust the ar of characters and stages to 3:2
+// Comparison: https://imgsli.com/MjI4NTQw
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+004f08a0 0803A872
+004f089c C8719C52
+004f098c D6719C52
+004f0990 1603A872
+004fe3a0 0803A872
+004fe39c C8719C52
+014e5cec 09008052 // generated 3:2 aspect low16 for w9
+014e5cf0 09F8A772 // generated 3:2 aspect high16 for w9
+014e5e04 D671DCF2
+014e5e08 1603E8F2
+014e62c4 08008052 // generated 3:2 aspect low16 for w8
+014e62c8 08F8A772 // generated 3:2 aspect high16 for w8
+029f9acc CF719C52
+029f9ad0 0F03A872
+0147f0c0 08008052 // generated 3:2 aspect low16 for w8
+0147f0c4 08F8A772 // generated 3:2 aspect high16 for w8
+0354d2dc CC719CD2
+0354d2e0 0C03A8F2
+0361bd78 0803A872
+0361bd78 C8719C52
+04470c5c 8ee31840
+005050cc 08008052 // generated 3:2 aspect low16 for w8
+005050d0 08F8A772 // generated 3:2 aspect high16 for w8
+005145ac 09008052 // generated 3:2 aspect low16 for w9
+005145b0 09F8A772 // generated 3:2 aspect high16 for w9
+031573d4 D5719C52
+031573d8 1503A872
+0051463c 09008052 // generated 3:2 aspect low16 for w9
+00514640 09F8A772 // generated 3:2 aspect high16 for w9
+01493070 08008052 // generated 3:2 aspect low16 for w8
+01493074 08F8A772 // generated 3:2 aspect high16 for w8
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174

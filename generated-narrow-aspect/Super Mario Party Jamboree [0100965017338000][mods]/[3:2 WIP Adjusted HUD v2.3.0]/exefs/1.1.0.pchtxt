@@ -1,0 +1,46 @@
+@nsobid-5A7A58268E5F214883526141DBE4BF2ED2CCC691
+
+# Super Mario Party Jamboree [0100965017338000] v1.1.0 - 3:2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 Aspect Ratio optimized for 3:2
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+00524ac0 894281D2
+00524b9c 86428152
+00845f2c 08008052 // generated 3:2 aspect low16 for w8
+00845f30 08F8A772 // generated 3:2 aspect high16 for w8
+00845a34 09008052 // generated 3:2 aspect low16 for w9
+00845a38 09F8A772 // generated 3:2 aspect high16 for w9
+003f3130 08008052 // generated 3:2 aspect low16 for w8
+003f3134 08F8A772 // generated 3:2 aspect high16 for w8
+003f34d8 08008052 // generated 3:2 aspect low16 for w8
+003f34dc 08F8A772 // generated 3:2 aspect high16 for w8
+00498a84 08008052 // generated 3:2 aspect low16 for w8
+00498a88 08F8A772 // generated 3:2 aspect high16 for w8
+0049aaa4 08008052 // generated 3:2 aspect low16 for w8
+0049aaa8 08F8A772 // generated 3:2 aspect high16 for w8
+004a0c28 08008052 // generated 3:2 aspect low16 for w8
+004a0c2c 08F8A772 // generated 3:2 aspect high16 for w8
+004a0dec 08008052 // generated 3:2 aspect low16 for w8
+004a0df0 08F8A772 // generated 3:2 aspect high16 for w8
+00848b2c 08008052 // generated 3:2 aspect low16 for w8
+00848b30 08F8A772 // generated 3:2 aspect high16 for w8
+00845c04 09008052 // generated 3:2 aspect low16 for w9
+00845c08 09F8A772 // generated 3:2 aspect high16 for w9
+0086ba70 69DE9152
+0086ba74 0903A872
+00860514 C871DCD2
+00860518 0803E8F2
+003f1424 090080D2 // generated 3:2 aspect low16 for x9
+003f1428 09F8A7F2 // generated 3:2 aspect high16 for x9
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://ko-fi.com/fl4sh9174

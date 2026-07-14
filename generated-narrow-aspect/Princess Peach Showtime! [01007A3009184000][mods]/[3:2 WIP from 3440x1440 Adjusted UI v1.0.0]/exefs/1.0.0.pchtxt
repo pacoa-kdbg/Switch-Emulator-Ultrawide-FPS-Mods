@@ -1,0 +1,26 @@
+@nsobid-928EFE2954F680557B8B3839481C97DB
+
+# Princess Peach: Showtime! [01007A3009184000] v1.0.0 - 3:2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 Aspect Ratio optimized for 3:2
+// Use stretch to window option
+// Fix the UI aspect ratio
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+043294f4 09008052 // generated 3:2 aspect low16 for w9
+043294f8 09F8A772 // generated 3:2 aspect high16 for w9
+01feced0 1B52A852 // fov
+01fecef4 6803271E // fov
+08982f10 1F2003D5 // screenpercentage (allow full resolution)
+0432bb8c 0310251E // adjust wardrobe fov/zoom
+0432bb9c 6028201E // adjust wardrobe fov/zoom
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

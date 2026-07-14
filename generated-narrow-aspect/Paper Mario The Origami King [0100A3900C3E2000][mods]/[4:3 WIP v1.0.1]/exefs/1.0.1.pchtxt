@@ -1,0 +1,20 @@
+@nsobid-E74395F066FD8CCB51EC17B39B3DA2C8CF520089
+
+# Paper Mario The Origami King [0100A3900C3E2000] v1.0.1 - 4:3
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 Aspect Ratio optimized for 4:3
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 4:3 (0x3faaaaab).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+002665b8 0170201E
+0026a2c8 69559552 // generated 4:3 aspect low16 for w9
+0026a2d4 49F5A772 // generated 4:3 aspect high16 for w9
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174

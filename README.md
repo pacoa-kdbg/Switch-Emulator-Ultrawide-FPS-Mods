@@ -81,6 +81,7 @@ This layout makes it easy to download only the mod pack you need for a specific 
 Depending on the game, you may find:
 
 - **21:9 ultrawide**
+- **3:2 / 4:3 WIP candidates** in `generated-narrow-aspect/`
 - **60 FPS**
 - **120 FPS**
 - **240 FPS**
@@ -104,6 +105,14 @@ Not every game includes every option.
   - `V2.pchtxt`
 - In many cases, all included files are required for the mod to work correctly
 - If a mod is broken after a game update, make sure the **game version**, and **mod version** still match
+
+### 3:2 and 4:3 WIP candidates
+
+This fork includes generated narrow-aspect candidates under `generated-narrow-aspect/`.
+They are made from existing 21:9 `.pchtxt` mods by changing obvious aspect-ratio
+float loads to 3:2 or 4:3. These are meant for emulator testing first; HUD fixes
+are still game-specific. See `docs/narrow-aspect-research.md` for details and run
+`python3 tools/generate-narrow-aspect-mods.py` to regenerate them.
 
 ---
 

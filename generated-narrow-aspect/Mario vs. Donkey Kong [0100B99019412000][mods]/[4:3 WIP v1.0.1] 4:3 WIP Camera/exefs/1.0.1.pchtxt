@@ -1,0 +1,24 @@
+@nsobid-43AE51EE9766867DA5F1272CA0D3D8A60AC53296
+
+# Mario vs. Donkey Kong [0100B99019412000] 1.0.1 - 4:3
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 Aspect Ratio optimized for 4:3
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 4:3 (0x3faaaaab).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+0045fd90 6A559552 // generated 4:3 aspect low16 for w10
+0045fd94 4AF5A772 // generated 4:3 aspect high16 for w10
+00e71c20 1F2003D5
+0003ce68 00902F1E
+016b10d8 1F2003D5
+00e169c8 68559552 // generated 4:3 aspect low16 for w8
+00e169cc 48F5A772 // generated 4:3 aspect high16 for w8
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174

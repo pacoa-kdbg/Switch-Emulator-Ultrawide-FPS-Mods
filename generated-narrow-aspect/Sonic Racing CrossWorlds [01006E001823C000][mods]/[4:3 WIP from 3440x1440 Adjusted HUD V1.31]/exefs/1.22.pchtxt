@@ -1,0 +1,37 @@
+@nsobid-05A4A7225F20EBC0CA51C5AD45E7EDBB
+
+# Sonic Racing: CrossWorlds [01006E001823C000] v1.22 - 4:3
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 Aspect Ratio optimized for 4:3
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 4:3 (0x3faaaaab).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+00731458 00102E1E // fmov s0, #1.00000000      // Resolution Scaling
+00A7636C 0070201E // b          LAB_710524afa4 // Remove blackbars
+0524afa4 68400090 // adrp       x8,0x7105a56000// Remove blackbars
+0524afa8 005d4dbd // ldr        s0,[x8, #0xd5c]// Remove blackbars
+0524afac f1ace016 // b          LAB_7100a76370 // Remove blackbars
+05a56d5c 8ee31840 // 2.38888888                //
+009ABE08 8c000054 // b.gt       LAB_71009d0cf8 // Fov menu/cutscenes
+009ABE0C 1F2003D5 // mov  w8, #0x0000          // Fov menu/cutscenes
+009ABE10 0854A872 // movk w8, #0x42a0, lsl #16 // Fov menu/cutscenes
+009ABE14 0001271E // fmov s0,w8                // Fov menu/cutscenes
+009ABE18 48F3A752 // mov  w8, #0x3f940000      // Fov menu/cutscenes
+009ABE1C 0101271E // fmov s1, w8               // Fov menu/cutscenes
+009ABE20 0008211E // fmul s0,s0,s1             // Fov menu/cutscenes
+01A52370 69559552 // generated 4:3 aspect low16 for w9
+01A52374 49F5A772 // generated 4:3 aspect high16 for w9
+00EBF4D4 68559552 // generated 4:3 aspect low16 for w8
+00EBF4D8 48F5A772 // generated 4:3 aspect high16 for w8
+00F512F0 68559552 // generated 4:3 aspect low16 for w8
+00F512F4 48F5A772 // generated 4:3 aspect high16 for w8
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

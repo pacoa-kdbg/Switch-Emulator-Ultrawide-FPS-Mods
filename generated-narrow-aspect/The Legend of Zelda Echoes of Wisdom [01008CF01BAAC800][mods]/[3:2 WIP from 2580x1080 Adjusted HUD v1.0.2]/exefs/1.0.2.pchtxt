@@ -1,0 +1,39 @@
+@nsobid-D1ED438C8BDAF4368B30DAEC53ED8E9BACD31A34
+
+# The Legend of Zelda Echoes of Wisdom [01008CF01BAAC800] v1.0.2 - 3:2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 Optimized for 3:2
+// Use Stretch to Window
+// Experimental mod, can randomly cause some issues with menus
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+00348B6C 09008052 // generated 3:2 aspect low16 for w9
+00348B70 09F8A772 // generated 3:2 aspect high16 for w9
+026318A4 884281D2
+02703A2C 09008052 // generated 3:2 aspect low16 for w9
+02703A30 09F8A772 // generated 3:2 aspect high16 for w9
+02722874 09008052
+02722880 09008052 // generated 3:2 aspect low16 for w9
+02722884 09F8A772 // generated 3:2 aspect high16 for w9
+0279ADC8 09008052 // generated 3:2 aspect low16 for w9
+0279ADCC 09F8A772 // generated 3:2 aspect high16 for w9
+0272257C 1C878052
+02722580 9B428152
+0247FCE0 08F08052
+0247FCF0 08878052
+0271E5F8 08F08052
+0271E5FC 09878052
+02787374 09878052
+0271E620 89428152
+0272268C 88428152
+02702C7C 9B4281D2
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

@@ -1,0 +1,29 @@
+@nsobid-891687F016A18F1773D4A88EBF8A973C8E33ECC1
+
+# Super Mario 3D World + Bowser's Fury [010028600EBDA000] v1.1.0 - 4:3
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 Aspect Ratio optimized for 4:3
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 4:3 (0x3faaaaab).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+00901630 61559552 // generated 4:3 aspect low16 for w1
+00901634 41F5A772 // generated 4:3 aspect high16 for w1
+00901638 2000271E // fmov s0, w1 
+0090163c 002401bd // str s0,[x0, #0x124]
+00901640 002801bd // str s0,[x0, #0x128]
+00901644 c0035fd6 // ret
+009701B0 0370201E // fmov s3, #2.37500000  
+009237C8 695595D2 // generated 4:3 aspect low16 for x9
+009237CC 49F5A7F2 // generated 4:3 aspect high16 for x9
+008BD0FC 68559552 // generated 4:3 aspect low16 for w8
+008BD100 48F5A772 // generated 4:3 aspect high16 for w8
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

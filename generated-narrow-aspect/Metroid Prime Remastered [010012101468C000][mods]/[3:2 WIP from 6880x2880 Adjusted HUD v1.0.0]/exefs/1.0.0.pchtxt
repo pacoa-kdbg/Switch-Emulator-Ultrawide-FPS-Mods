@@ -1,0 +1,80 @@
+@nsobid-67C9CA1428222752F951021464A7B3597EB98FEC
+
+# Metroid Prime Remastered [010012101468C000] v1.0.0 - 3:2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 3:2 WIP optimized for 3:2
+// HUD is adjusted for 3:2
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+00afeb2c 09008052 // generated 3:2 aspect low16 for w9
+00afeb30 09F8A772 // generated 3:2 aspect high16 for w9
+00b30490 09008052 // generated 3:2 aspect low16 for w9
+00b30494 09F8A772 // generated 3:2 aspect high16 for w9
+00001248 005C8352 // mov w0, #0xd70             // ScreenWidth
+00001250 00688152 // mov w0, #0x5a0             // ScreenHeight
+00001258 80428152 // mov w0, #0xa14             // HandheldFullWidth
+00001260 00878052 // mov w0, #0x438             // HandheldFullHeight
+00001268 80428152 // mov w0, #0xa14             // HandheldContentWidth
+00001270 00878052 // mov w0, #0x438             // HandheldContentHeight
+00afe3d8 c2490514 // b 0x7100c50ae0             //
+00c50ae0 08008052 // generated 3:2 aspect low16 for w8
+00c50ae4 08F8A772 // generated 3:2 aspect high16 for w8
+00c50ae8 0001271E // fmov s0, w8                // s0 = 2.38888888
+00c50aec 3cb6fa17 // b 0x7100afe3dc             //
+// 00c8c8ac 0854A852 // mov w8, #0x42a00000        // DefaultThirdPersonVerticalFOV s0 = 80.0 
+// 00c8c8b8 8852A852 // mov w8, #0x42940000        //
+// 00c8c8bc 0001271E // fmov s0, w8                // DefaultFirstPersonVerticalFOV s0 = 74
+001fbe40 3D000014 // b #0x12c                   //
+001fbb5C 27000014 // b #0xd8                    //
+00bd5368 9fd4da17 // b 0x710028a5e4             // HUD
+0028a5e4 001041bd // ldr        s0,[x0, #0x110] // Original instruction
+0028a5e8 89F5A752 // mov w9, #0x3fac0000        // 1.34375f
+0028a5ec 2301271E // fmov s3, w9                // Move 1.34375f into s3
+0028a5f0 0008231E // fmul s0, s0, s3            // s0= 1.77777777*1.34375 = 2.38888888
+0028a5f4 5e2b2514 // b 0x7100bd536c             // Return to original code
+00e77adc 80428152 // mov w0, #0xa14             // GetScreenWidth 
+003c6508 80428152 // mov w0, #0xa14             // GetScreenWidth CGameArchitecture::CGameArchitecture
+003c6384 80428152 // mov w0, #0xa14             // GetScreenWidth CGameArchitecture::CGameArchitecture
+003c6f80 80428152 // mov w0, #0xa14             // GetScreenWidth CGameArchitecture::Update
+00bdb81c 80428152 // mov w0, #0xa14             // GetScreenWidth CGuiTextPane::Initialize
+00e5324c 80428152 // mov w0, #0xa14             // GetScreenWidth CInGameGuiManagerMP1::CInGameGuiManagerMP1
+00e5325c 80428152 // mov w0, #0xa14             // GetScreenWidth CInGameGuiManagerMP1::CInGameGuiManagerMP1
+00e54c40 80428152 // mov w0, #0xa14             // GetScreenWidth CInGameGuiManagerMP1::Draw
+00e74acc 80428152 // mov w0, #0xa14             // GetScreenWidth CInventoryScreenMP1::CInventoryScreenMP1
+00e74abc 80428152 // mov w0, #0xa14             // GetScreenWidth CInventoryScreenMP1::CInventoryScreenMP1
+00e75bfc 80428152 // mov w0, #0xa14             // GetScreenWidth CInventoryScreenMP1::Draw
+00d108b4 80428152 // mov w0, #0xa14             // GetScreenWidth CVisorEffectManagerMP1::AddVisorGooSplat
+00d0f810 80428152 // mov w0, #0xa14             // GetScreenWidth CVisorEffectManagerMP1::IsAtMaxVisorGoo
+00e77ae4 00878052 // mov w0, #0x438             // GetScreenHeight
+003c638c 00878052 // mov w0, #0x438             // GetScreenHeight CGameArchitecture::CGameArchitecture
+003c6510 00878052 // mov w0, #0x438             // GetScreenHeight CGameArchitecture::CGameArchitecture
+003c6f88 00878052 // mov w0, #0x438             // GetScreenHeight CGameArchitecture::Update
+00bdb844 00878052 // mov w0, #0x438             // GetScreenHeight CGuiTextPane::Initialize
+00cb1ba8 00878052 // mov w0, #0x438             // GetScreenHeight CHudBallInterfaceMP1::SetBallModeFactor
+00e53254 00878052 // mov w0, #0x438             // GetScreenHeight CInGameGuiManagerMP1::CInGameGuiManagerMP1
+00e53264 00878052 // mov w0, #0x438             // GetScreenHeight CInGameGuiManagerMP1::CInGameGuiManagerMP1
+00e54c50 00878052 // mov w0, #0x438             // GetScreenHeight CInGameGuiManagerMP1::Draw
+00e74ad4 00878052 // mov w0, #0x438             // GetScreenHeight CInventoryScreenMP1::CInventoryScreenMP1
+00e74ac4 00878052 // mov w0, #0x438             // GetScreenHeight CInventoryScreenMP1::CInventoryScreenMP1
+00e75c04 00878052 // mov w0, #0x438             // GetScreenHeight CInventoryScreenMP1::Draw
+00d108bc 00878052 // mov w0, #0x438             // GetScreenHeight CVisorEffectManagerMP1::AddVisorGooSplat
+00d0f818 00878052 // mov w0, #0x438             // GetScreenHeight CVisorEffectManagerMP1::IsAtMaxVisorGoo
+// 001a5cc0 80428152 // mov w0, #0xa14       // GetScreenWidth IGraphicsContext::BuildContext
+// 00c327c8 80428152 // mov w0, #0xa14       // GetScreenWidth NRenderUtilMPT::BuildOrthoViewport
+// 00c32914 80428152 // mov w0, #0xa14       // GetScreenWidth NRenderUtilMPT::GetViewport
+// 00c32940 80428152 // mov w0, #0xa14       // GetViewportWidth NRenderUtilMPT::GetViewportWidth
+// 001a5cc8 00878052 // mov w0, #0x438       // GetScreenHeight IGraphicsContext::BuildContext
+// 00c327dc 00878052 // mov w0, #0x438       // GetScreenHeight NRenderUtilMPT::BuildOrthoViewport
+// 00c3290c 00878052 // mov w0, #0x438       // GetScreenHeight NRenderUtilMPT::GetViewport
+// 00c32930 00878052 // mov w0, #0x438       // GetViewportHeight NRenderUtilMPT::GetViewportHeight
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

@@ -1,0 +1,24 @@
+@nsobid-A071148FE679E76DCDB297C7A7A6013D109D7BC4
+
+# Super Mario Galaxy 2 [0100fd8022daa000] v1.0.0 - 3:2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 Aspect Ratio
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+00068ad0 C0008052 // upscale
+002fe498 08008052 // generated 3:2 aspect low16 for w8
+002fe49c 08F8A772 // generated 3:2 aspect high16 for w8
+002fe4a0 0B01271E // fmov s11, w8
+// 002fe4ac C880A852 // fov/hud
+0015c38c C870A852 // culling
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

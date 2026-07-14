@@ -1,0 +1,24 @@
+@nsobid-EBDE239CB7780F58266AB355AC157D3100000000
+
+# Nikoderiko the Magical World [01009FA01FF6C000] v1.0.0 - 3:2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 3:2 WIP aspect ratio optimized for 3:2
+// Use stretch to window options
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+02a1a95c 00102E1E // r.ScreenPercentage
+02758d34 09008052 // generated 3:2 aspect low16 for w9
+02758d38 09F8A772 // generated 3:2 aspect high16 for w9
+0275b4b4 80f641bd // fov
+0275b4c0 14902E1E // fov
+0275b4c4 0008341E // fov
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

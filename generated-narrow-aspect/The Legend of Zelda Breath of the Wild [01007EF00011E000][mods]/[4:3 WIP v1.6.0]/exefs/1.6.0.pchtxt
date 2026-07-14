@@ -1,0 +1,28 @@
+@nsobid-8E9978D50BDD20B4C8395A106C27FFDE
+
+# The Legend of Zelda Breath of the Wild [01007EF00011E000] 1.6.0 - 4:3
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 Optimized for 4:3
+// Use Stretch to Window
+
+// WIP generated narrow-aspect candidate: 4:3 (0x3faaaaab).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+00e0ad60 69559552 // generated 4:3 aspect low16 for w9
+00e0ad64 49F5A772 // generated 4:3 aspect high16 for w9
+00e0ad68 2001271E //fmov s0, w9               
+01271870 69559552 // generated 4:3 aspect low16 for w9
+01271874 49F5A772 // generated 4:3 aspect high16 for w9
+01271878 2001271E //fmov s0, w9              
+0127187c c0035fd6 //ret                      
+015c2140 68559552 // generated 4:3 aspect low16 for w8
+015c2144 48F5A772 // generated 4:3 aspect high16 for w8
+015c2148 0001271E //fmov s0, w8              
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

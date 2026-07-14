@@ -1,0 +1,28 @@
+@nsobid-5D913CF71EB24CB22C5105B1FA3EFD97
+
+# Animal Crossing New Horizons [01006F8002326000] v3.0.0 - 3:2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 Aspect Ratio optimized for 3:2
+// Adjusted HUD
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+03db1b0c 08008052 // generated 3:2 aspect low16 for w8
+03db1b10 08F8A772 // generated 3:2 aspect high16 for w8
+03db1b14 0001271E // Aspect Ratio
+0376b650 09008052 // generated 3:2 aspect low16 for w9
+0376b654 09F8A772 // generated 3:2 aspect high16 for w9
+005cdcc0 884281D2 // Viewport
+005cdcc4 0887c0f2 // Viewport
+// 04075720 00002245 // Resolution 2580.0
+04075724 00008744 // Resolution 1080.0
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

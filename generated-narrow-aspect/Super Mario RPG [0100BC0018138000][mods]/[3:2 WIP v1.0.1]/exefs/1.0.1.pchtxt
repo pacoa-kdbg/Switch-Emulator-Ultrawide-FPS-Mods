@@ -1,0 +1,18 @@
+@nsobid-97F9664CFB2721546954CDEB3B303A4C
+
+# Super Mario RPG [0100BC0018138000] v1.0.1 - 120FPS
+
+@flag offset_shift 0x100
+
+// 120FPS
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+00237584 1E008052 // generated 3:2 aspect low16 for w30
+00237588 1EF8A772 // generated 3:2 aspect high16 for w30
+0023758C C003271E
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174

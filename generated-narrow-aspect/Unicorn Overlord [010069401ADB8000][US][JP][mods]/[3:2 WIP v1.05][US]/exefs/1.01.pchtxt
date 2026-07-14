@@ -1,0 +1,23 @@
+@nsobid-E2876F945A831D786795996DD2509E40B9335DAA
+
+# Unicorn Overlord [010069401ADB8000] 1.01 - 3:2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 Aspect Ratio optimized for 3:2
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+001c1100 08008052 // generated 3:2 aspect low16 for w8
+001c1104 08F8A772 // generated 3:2 aspect high16 for w8
+00543970 08008052 // generated 3:2 aspect low16 for w8
+00543974 08F8A772 // generated 3:2 aspect high16 for w8
+00535a6c 08008052 // generated 3:2 aspect low16 for w8
+00535a70 08F8A772 // generated 3:2 aspect high16 for w8
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174

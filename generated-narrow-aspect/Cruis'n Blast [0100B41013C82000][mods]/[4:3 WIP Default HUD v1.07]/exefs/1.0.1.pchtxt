@@ -1,0 +1,21 @@
+@nsobid-9346D69ABD4CC24BA10E47C58040024400000000
+
+# Cruis n Blast [0100B41013C82000] v1.07 - 4:3 Default HUD
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 Aspect ratio optimized for 4:3 Default HUD (Stretch)
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 4:3 (0x3faaaaab).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+00521084 7E559552 // generated 4:3 aspect low16 for w30
+00521088 5EF5A772 // generated 4:3 aspect high16 for w30
+0052108c C003271E
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

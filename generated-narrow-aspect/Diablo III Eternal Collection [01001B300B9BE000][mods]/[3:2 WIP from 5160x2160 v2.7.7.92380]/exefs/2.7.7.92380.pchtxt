@@ -1,0 +1,28 @@
+@nsobid-2607A74F5DF7754CC0357B5DF7E496931355D8CA
+
+# Diablo III Eternal Collection [01001B300B9BE000] v2.7.7.92380 - 3:2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 Aspect Ratio optimized for 3:2
+// Use stretch to window option
+// HUD is adjusted to 3:2
+// USE 8GB DRAM MEMORY LAYOUT
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+00158488 14008252 // Shadow resolution
+00eb0b10 8ee31840 // 2.38888888
+000e7868 0A008052 // generated 3:2 aspect low16 for w10
+000e786c 0AF8A772 // generated 3:2 aspect high16 for w10
+000e7858 088582D2 // Width  Docked
+000e7860 080EC1F2 // Height Docked
+00276A78 F5031B32 // Force HUD/layout mask w21 = 0x20
+00a36c34 1300A852 // 0x17400000 -> 0x40000000, 372 MiB -> 1024 MiB
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

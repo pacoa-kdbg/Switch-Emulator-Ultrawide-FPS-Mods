@@ -1,0 +1,29 @@
+@nsobid-A2FA3E8184E6D4C49F56C62E79CB58D7A5BE909E
+
+# Endless Ocean Luminous [010067B017588000] v1.0.0 - 60FPS
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 Aspect Ratio optimized for 4:3
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 4:3 (0x3faaaaab).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+008e1874 68559552 // generated 4:3 aspect low16 for w8
+008e1878 48F5A772 // generated 4:3 aspect high16 for w8
+008e467c 68559552 // generated 4:3 aspect low16 for w8
+008e4680 48F5A772 // generated 4:3 aspect high16 for w8
+008e4780 68559552 // generated 4:3 aspect low16 for w8
+008e4784 48F5A772 // generated 4:3 aspect high16 for w8
+008e120c 69559552 // generated 4:3 aspect low16 for w9
+008e1210 49F5A772 // generated 4:3 aspect high16 for w9
+008e154c 69559552 // generated 4:3 aspect low16 for w9
+008e1550 49F5A772 // generated 4:3 aspect high16 for w9
+00903b3c C971DCD2
+00903b40 0903E8F2
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174

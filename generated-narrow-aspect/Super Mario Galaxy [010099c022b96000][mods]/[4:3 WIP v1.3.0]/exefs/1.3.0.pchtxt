@@ -1,0 +1,25 @@
+@nsobid-9D08CADCBCC1CEA428381745291F8BC2B0B13F4E
+
+# Super Mario Galaxy [010099c022b96000] v1.3.0 - 4:3
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 Aspect Ratio
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 4:3 (0x3faaaaab).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+002159E0 C0008052 // Upscale 0 = low quality 6 = high quality
+000E6CF4 1F2003D5
+000E6CF8 68559552 // generated 4:3 aspect low16 for w8
+000E6CFC 48F5A772 // generated 4:3 aspect high16 for w8
+0008F794 1F2003D5
+0008F798 68559552 // generated 4:3 aspect low16 for w8
+0008F79C 48F5A772 // generated 4:3 aspect high16 for w8
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

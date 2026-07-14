@@ -1,0 +1,25 @@
+@nsobid-BB89070F5B0028FFC71B8070F462C938
+
+# Pikmin 4 [0100B7C00933A000] v1.0.2 - 4:3
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 4:3 WIP aspect ratio optimized for 4:3
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 4:3 (0x3faaaaab).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+0598a7a0 08008052 // disable dynamic resolution (r.DynamicRes.OperationMode)
+019ab030 8853A852 // FOV
+019ab034 0001271E // FOV
+019ab038 00F401BD // FOV
+019ab03c C0035FD6 // FOV
+05082130 68559552 // generated 4:3 aspect low16 for w8
+05082138 48F5A772 // generated 4:3 aspect high16 for w8
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://ko-fi.com/fl4sh9174

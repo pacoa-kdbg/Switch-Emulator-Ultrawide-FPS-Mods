@@ -1,0 +1,20 @@
+@nsobid-78F37BB55D015BE3B368EC22AF595455F1544DC1
+
+# Paper Mario_ The Thousand-Year Door [0100ECD018EBE000] v1.0.0 - 3:2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 3:2 WIP optimized for 3:2
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+002f25c8 08008052 // generated 3:2 aspect low16 for w8
+002f25cc 08F8A772 // generated 3:2 aspect high16 for w8
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

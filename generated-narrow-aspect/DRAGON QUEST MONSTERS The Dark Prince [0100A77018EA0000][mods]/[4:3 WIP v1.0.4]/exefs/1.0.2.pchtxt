@@ -1,0 +1,35 @@
+@nsobid-6B72212DABB91A6F3022582CCF8E77C5
+
+# DRAGON QUEST MONSTERS: The Dark Prince [0100A77018EA0000] 1.0.2 - 4:3 4:3 WIP Mod 
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 Aspect Ratio optimized for 4:3
+// Use strecth to window option 
+
+// WIP generated narrow-aspect candidate: 4:3 (0x3faaaaab).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+00e55478 0170201E
+04d68f94 68559552 // generated 4:3 aspect low16 for w8
+04d68f98 48F5A772 // generated 4:3 aspect high16 for w8
+056162f8 68559552 // generated 4:3 aspect low16 for w8
+056162fc 48F5A772 // generated 4:3 aspect high16 for w8
+05ae8be4 68559552 // generated 4:3 aspect low16 for w8
+05ae8be4 48F5A772 // generated 4:3 aspect high16 for w8
+052d0624 69559552 // generated 4:3 aspect low16 for w9
+052d0628 49F5A772 // generated 4:3 aspect high16 for w9
+0532c4cc 69559552 // generated 4:3 aspect low16 for w9
+0532c4d0 49F5A772 // generated 4:3 aspect high16 for w9
+00dd45f4 0A03E8F2
+00dd474c 0A03E8F2
+00d92d68 0803E8F2
+02bc2d3c 695595D2 // generated 4:3 aspect low16 for x9
+02bc2d40 49F5A7F2 // generated 4:3 aspect high16 for x9
+@stop
+
+@Fl4sh_#9174
+
+//00e55478 0170201E // code that controls ar
+//00e55414 1F2003D5 // change the camera style of the game

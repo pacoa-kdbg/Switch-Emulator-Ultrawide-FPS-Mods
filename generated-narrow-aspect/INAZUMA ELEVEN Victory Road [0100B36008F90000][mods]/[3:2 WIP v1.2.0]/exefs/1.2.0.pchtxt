@@ -1,0 +1,39 @@
+@nsobid-09AD6947189FC6D982207F7535CD13317323FA7A
+
+# INAZUMA ELEVEN Victory Road [0100B36008F90000] v1.2.0 - 3:2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 3:2 WIP optimized for 3:2
+// Use stretch to window option
+// The game changed functions since the DEMO, so i adjusted only a few things in the HUD this time
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+00481cb0 49A4A852 // mov        w9, #0x45220000     // Some HUD/Cinematics
+004ab7b8 08008052 // generated 3:2 aspect low16 for w8
+004ab7bc 08F8A772 // generated 3:2 aspect high16 for w8
+004ab7c0 C971DCD2 // mov        x9,#0xe38e00000000  // Aspect ratio
+004ab7cc 0903E8F2 // movk       x9,#0x4018, LSL #48 // Aspect ratio
+0065ac3c 0d000014 // b          #0x44               // Aspect ratio
+00b8a404 09008052 // generated 3:2 aspect low16 for w9
+00b8a408 09F8A772 // generated 3:2 aspect high16 for w9
+00ec77fc 08008052 // generated 3:2 aspect low16 for w8
+00ec7800 08F8A772 // generated 3:2 aspect high16 for w8
+00da2fb8 08008052 // generated 3:2 aspect low16 for w8
+00da2fbc 08F8A772 // generated 3:2 aspect high16 for w8
+00da2f38 08008052 // generated 3:2 aspect low16 for w8
+00da2f3c 08F8A772 // generated 3:2 aspect high16 for w8
+00d05548 08008052 // generated 3:2 aspect low16 for w8
+00d0554c 08F8A772 // generated 3:2 aspect high16 for w8
+00d054c4 08008052 // generated 3:2 aspect low16 for w8
+00d054c8 08F8A772 // generated 3:2 aspect high16 for w8
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174
+
+// 0065ac68 0090221E // AR (second method)

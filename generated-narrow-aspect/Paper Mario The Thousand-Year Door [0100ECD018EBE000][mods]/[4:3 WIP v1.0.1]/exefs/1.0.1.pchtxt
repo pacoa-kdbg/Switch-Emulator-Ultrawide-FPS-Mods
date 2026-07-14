@@ -1,0 +1,58 @@
+@nsobid-0EFFE4AF1DEC3A7966B934D4A7C3D2BF566A9C62
+
+# Paper Mario_ The Thousand-Year Door [0100ECD018EBE000] v1.0.1 - 4:3
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 4:3 WIP optimized for 4:3
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 4:3 (0x3faaaaab).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+009db718 695595D2 // generated 4:3 aspect low16 for x9
+009db71c 49F5A7F2 // generated 4:3 aspect high16 for x9
+00359d18 695595D2 // generated 4:3 aspect low16 for x9
+00359d1c 49F5A7F2 // generated 4:3 aspect high16 for x9
+009db454 685595D2 // generated 4:3 aspect low16 for x8
+009db458 48F5A7F2 // generated 4:3 aspect high16 for x8
+009be160 685595D2 // generated 4:3 aspect low16 for x8
+009be164 48F5A7F2 // generated 4:3 aspect high16 for x8
+0035aa04 685595D2 // generated 4:3 aspect low16 for x8
+0035aa08 48F5A7F2 // generated 4:3 aspect high16 for x8
+0035b988 69559552 // generated 4:3 aspect low16 for w9
+0035b98c 49F5A772 // generated 4:3 aspect high16 for w9
+002cadc0 69559552 // generated 4:3 aspect low16 for w9
+002cadc4 49F5A772 // generated 4:3 aspect high16 for w9
+0023ffb4 69559552 // generated 4:3 aspect low16 for w9
+0023ffb8 49F5A772 // generated 4:3 aspect high16 for w9
+0022dfd0 69559552 // generated 4:3 aspect low16 for w9
+0022dfd4 49F5A772 // generated 4:3 aspect high16 for w9
+00a846a4 68559552 // generated 4:3 aspect low16 for w8
+00a846a8 48F5A772 // generated 4:3 aspect high16 for w8
+0035d128 68559552 // generated 4:3 aspect low16 for w8
+0035d12c 48F5A772 // generated 4:3 aspect high16 for w8
+0035aca0 68559552 // generated 4:3 aspect low16 for w8
+0035aca4 48F5A772 // generated 4:3 aspect high16 for w8
+0035a694 68559552 // generated 4:3 aspect low16 for w8
+0035a698 48F5A772 // generated 4:3 aspect high16 for w8
+0035a080 68559552 // generated 4:3 aspect low16 for w8
+0035a084 48F5A772 // generated 4:3 aspect high16 for w8
+00359d78 68559552 // generated 4:3 aspect low16 for w8
+00359d7c 48F5A772 // generated 4:3 aspect high16 for w8
+002f2918 68559552 // generated 4:3 aspect low16 for w8
+002f291c 48F5A772 // generated 4:3 aspect high16 for w8
+002f27d8 68559552 // generated 4:3 aspect low16 for w8
+002f27dc 48F5A772 // generated 4:3 aspect high16 for w8
+0035b694 79559552 // generated 4:3 aspect low16 for w25
+0035b698 59F5A772 // generated 4:3 aspect high16 for w25
+009bdfec 74559552 // generated 4:3 aspect low16 for w20
+009bdff0 54F5A772 // generated 4:3 aspect high16 for w20
+003fc6e0 6A559552 // generated 4:3 aspect low16 for w10
+003fc6e4 4AF5A772 // generated 4:3 aspect high16 for w10
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

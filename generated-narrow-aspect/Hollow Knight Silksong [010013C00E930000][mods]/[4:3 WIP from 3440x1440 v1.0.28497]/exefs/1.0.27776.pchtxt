@@ -1,0 +1,26 @@
+@nsobid-9049EA1C527A35D70F1ECE5E784C62E
+
+# Hollow Knight Silksong [010013C00E930000] v1.0.27776 - 4:3
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 4:3 WIP optimized for 4:3
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 4:3 (0x3faaaaab).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+011cf4b4 08AE8152
+011cf4bc 08B48052
+02bd2924 68559552 // generated 4:3 aspect low16 for w8
+02bd2928 48F5A772 // generated 4:3 aspect high16 for w8
+02bd36e8 68559552 // generated 4:3 aspect low16 for w8
+02bd36ec 48F5A772 // generated 4:3 aspect high16 for w8
+02a8c900 01AE8152 
+02a8c904 02B48052
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174

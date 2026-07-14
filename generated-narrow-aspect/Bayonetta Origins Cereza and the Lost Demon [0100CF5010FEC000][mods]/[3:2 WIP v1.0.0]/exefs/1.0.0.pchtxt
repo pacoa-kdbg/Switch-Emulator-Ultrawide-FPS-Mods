@@ -1,0 +1,41 @@
+@nsobid-A1CE2940D813ACABA84073FDCC103D09CAF93DED
+
+# Bayonetta Origins Cereza and the Lost Demon [0100CF5010FEC000] v1.0.0 - 3:2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3:2 optimized for 3:2
+// Use stretch to window option
+
+// WIP generated narrow-aspect candidate: 3:2 (0x3fc00000).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+014e7924 0A008052 // generated 3:2 aspect low16 for w10
+014e7928 0AF8A772 // generated 3:2 aspect high16 for w10
+0151b2d0 0A008052 // generated 3:2 aspect low16 for w10
+0151b2d4 0AF8A772 // generated 3:2 aspect high16 for w10
+0147903c 08008052 // generated 3:2 aspect low16 for w8
+01479040 08F8A772 // generated 3:2 aspect high16 for w8
+0148006c 08008052 // generated 3:2 aspect low16 for w8
+01480070 08F8A772 // generated 3:2 aspect high16 for w8
+01507a28 08008052 // generated 3:2 aspect low16 for w8
+01507a2c 08F8A772 // generated 3:2 aspect high16 for w8
+01507a48 08008052 // generated 3:2 aspect low16 for w8
+01507a4c 08F8A772 // generated 3:2 aspect high16 for w8
+014e5d58 09008052 // generated 3:2 aspect low16 for w9
+014e5d5c 09F8A772 // generated 3:2 aspect high16 for w9
+0151bb4c 09008052 // generated 3:2 aspect low16 for w9
+0151bb50 09F8A772 // generated 3:2 aspect high16 for w9
+0100226c CA719CD2
+01002270 0A03A8F2
+01001a64 080080D2 // generated 3:2 aspect low16 for x8
+01001a68 08F8A7F2 // generated 3:2 aspect high16 for x8
+010023f4 080080D2 // generated 3:2 aspect low16 for x8
+010023f8 08F8A7F2 // generated 3:2 aspect high16 for x8
+012f7e38 080080D2 // generated 3:2 aspect low16 for x8
+012f7e3c 08F8A7F2 // generated 3:2 aspect high16 for x8
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174

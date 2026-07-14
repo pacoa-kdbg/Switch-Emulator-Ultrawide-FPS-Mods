@@ -1,0 +1,25 @@
+@nsobid-A16802625E7826BF83B6F9708E475B912A9AB7DF
+
+# Pokémon Shield [01008DB008C2C000] v1.3.2 - 4:3
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 Aspect Ratio optimized for 4:3
+// Use strecth to window option
+
+// WIP generated narrow-aspect candidate: 4:3 (0x3faaaaab).
+// Source aspect float was 0x4018e38e; HUD/layout fixes may still need game-specific work.
+@enabled
+00d93444 2C03A8F2 // Culling
+00607de8 C971DCF2 // Aspect Ratio
+00607dec 0903E8F2 // Aspect Ratio
+006076c4 e8ffff17 // Camera distortion
+00607664 69559552 // generated 4:3 aspect low16 for w9
+00607668 49F5A772 // generated 4:3 aspect high16 for w9
+0060766c 17000014 // Camera distortion
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174
