@@ -15,6 +15,70 @@ mod can be written.
    `1.777...`) or nearby projection setup, then patch to `0x3faaaaab` (4:3)
    or `0x3fc00000` (3:2). Verify HUD separately.
 
+## Pokémon Sword v1.3.2 4:3 HUD-stretch investigation (2026-07-14)
+
+Build ID `A3B75BCD3311385AEED67FBEEB79CBB7BF02F471`.
+
+Existing Fl4sh 21:9 mod (`[21.9 Ultrawide v1.3.2]/1.3.2.pchtxt`) patches only
+the float-aspect load at file offset `0x00607664/0x00607668`:
+
+```
+00607664 c9719c52  // movz w9, #0xe38e   -> low16 of 2.388f
+00607668 0903a872  // movk w9, #0x4018,lsl16 -> full 2.388f
+```
+
+Derived narrow mods (`[4:3 WIP v1.3.2]`, `[3:2 WIP v1.3.2]`) rewrite w9 to
+`0x3faaaaab` / `0x3fc00000`. Culling (`00d93414`) and camera-distortion
+(`006076c4/6c`) branches were preserved from Fl4sh's set.
+
+A separate aspect **double** is built into `x9` at `0x00607de8/0x00607dec`:
+
+```
+00607de8 C971DCF2  // movk x9, #0xe38e,lsl#32
+00607dec 0903E8F2  // movk x9, #0x4018,lsl#48   -> x9 = 0x4018E38E00000000 (2.388 dbl)
+```
+
+None of the current mods touch this double. Hypothesis: this untouched double
+feeds the UI/HUD subsystem or another aspect-dependent codepath, and it is
+why menus/HUD stretch horizontally at 4:3 (world uses the corrected float,
+UI still uses the original 2.388 or a value derived from it).
+
+### Candidate A deployed on Pocket S Mini (2026-07-14)
+
+`[4-3-UIFix-A-v1.3.2]` — keeps world float at 4:3, forces the aspect double
+to 16:9 (`0x3FFC71C71C71C71C` truncated to high32 = `0x3FFC71C7`):
+
+```
+00607de8 E938CEF2  // movk x9, #0x71C7,lsl#32
+00607dec 89FFE7F2  // movk x9, #0x3FFC,lsl#48   -> x9 = 0x3FFC71C700000000 (~16:9 dbl)
+```
+
+Pushed to
+`/sdcard/Android/data/dev.eden.eden_emulator.nightly/files/load/0100ABF008968000/4-3-UIFix-A-v1.3.2/exefs/1.3.2.pchtxt`.
+Also set `dump_nso=true` / `dump_exefs=true` in Eden config so a merged main
+NSO gets dropped in `.../files/dump/` on the next boot for proper RE.
+
+Expected outcomes when Paco enables ONLY this mod (disabling `[4:3 WIP v1.3.2]`):
+
+- If HUD/menus stop stretching (become pillarboxed inside the 4:3 window) →
+  double at `0x607de8` is the UI aspect. Ship as `[4:3 WIP v1.3.2 + UI fix]`.
+- If world re-stretches back to 16:9 → double is the world's aspect; revert.
+- If nothing changes → double drives some other path; iterate by disassembling
+  the merged NSO in Ghidra to trace xrefs from both aspect sites into UI code.
+
+### Tools setup on GPD Win5 (deck)
+
+Nothing installed yet. Plan for iteration 2+:
+
+```
+sudo pacman -S --needed jdk-openjdk unzip python-keystone aarch64-linux-gnu-binutils
+mkdir -p ~/tools && cd ~/tools
+# fetch Ghidra 11.x release
+```
+
+Use StevensND's Switch port-mods guide + Ghidra headless on the dumped main
+NSO (once available at `/sdcard/Android/data/dev.eden.eden_emulator.nightly/files/dump/`).
+
 ## Notes
 
 - Method reference: <https://github.com/StevensND/ghidra-port-mods-guide>
@@ -23,3 +87,86 @@ mod can be written.
   - 21:9  → `0x4018e38e` (approx, matches Fl4sh set)
   - 3:2   → `0x3fc00000` (1.5)
   - 4:3   → `0x3faaaaab` (1.33333333)
+
+### Iteration 2 test results (2026-07-14)
+
+Candidate A on device: text rendered correctly, but menu icons were
+misaligned / mis-scaled. Paco stopped emulation without checking world or
+battle scenes. Interpretation: the double at `0x00607de8` partially drives
+UI (menu backgrounds + text anchoring look fine at 16:9) but the icon
+(sprite quad) path reads the SAME double and multiplies quad width by it.
+With the double at 16:9 (1.778) instead of native 21:9.5 (2.388), sprite
+quads shrink and/or land off their anchor grid.
+
+Ghidra headless setup on Win5 was attempted but repeatedly SIGKILLed at the
+exec-tool layer (~15-45s cap on any SSH-tunneled shell). NSO dump was also
+unavailable: `dump_nso` / `dump_exefs` in Eden's `config.ini` read `false`
+when re-checked (must have been overwritten by Eden on next launch, or the
+prior subagent's edit did not persist). Full RE deferred; iterating on the
+same single-constant patch instead.
+
+### Candidate B deployed (2026-07-14)
+
+`[4-3-UIFix-B-v1.3.2]` — HUD aspect double forced to 4:3 dbl
+(`0x3FF5555555555555`, effective `0x3FF5555500000000` since only upper
+32 bits are movk-patched):
+
+```
+00607de8 A9AACAF2  // movk x9, #0x5555,lsl#32
+00607dec A9FEE7F2  // movk x9, #0x3FF5,lsl#48   -> x9 = 0x3FF5555500000000 (~1.333 dbl)
+```
+
+Rationale: if icons are pre-stretched horizontally by the double as an
+X-scale factor for sprite quads, matching it to the ACTUAL output aspect
+(4:3) should let icons render at native proportions inside the 4:3 window.
+Text path was already OK at 16:9 (candidate A), so text may either
+remain OK here or need a separate constant if it now over-shrinks.
+
+### Candidate C deployed (2026-07-14)
+
+`[4-3-UIFix-C-v1.3.2]` — HUD aspect double forced to 1.5 dbl (exact 3:2,
+`0x3FF8000000000000`):
+
+```
+00607de8 0900C0F2  // movk x9, #0x0000,lsl#32  (no-op-ish on lower16)
+00607dec 09FFE7F2  // movk x9, #0x3FF8,lsl#48   -> x9 = 0x3FF8000000000000 (1.5 dbl)
+```
+
+Middle bracket between candidate A (16:9, icons broken) and candidate B
+(4:3). Try if B under-corrects (icons too small / too far left).
+
+### Deploy pattern (still relevant for future iterations)
+
+1. Write pchtxt on Sync-VM, `scp` to Win5 `/tmp/`.
+2. `adb push /tmp/<file> /data/local/tmp/<file>` (u:shell can write here).
+3. `adb shell '/debug_ramdisk/magisk su -c /data/local/tmp/deploy_<x>.sh'`
+   where `deploy_<x>.sh` does `mkdir -p` + `cp` + `chown u0_a150:ext_data_rw`
+   + `chmod 770` in `/sdcard/Android/data/dev.eden.eden_emulator.nightly/`
+   `files/load/0100ABF008968000/<mod dir>/exefs/`.
+
+Mods live SIDE-BY-SIDE in that `load/` dir; Eden's mod UI toggles which are
+enabled per session. Do NOT enable both an old and a new candidate at the
+same time — the last-written `.pchtxt` at conflicting offsets wins and
+results are unpredictable.
+
+### If iteration 3+ is needed (real RE)
+
+Enable NSO dump reliably: patch `config.ini` on device while Eden is fully
+killed (`am force-stop dev.eden.eden_emulator.nightly` under root), sed the
+lines `dump_nso=false` → `dump_nso=true` (and same for `dump_exefs`),
+chown back to `u0_a150:ext_data_rw`, then have Paco launch Sword to the
+title screen. NSO lands at `.../files/dump/0100ABF008968000/exefs/main`
+(or under a build-ID subdir). Pull with `adb pull`.
+
+On Win5, Ghidra headless requires a stable long-running shell. The exec
+tool's SSH pipe kept SIGKILLing at 15-45s; workarounds:
+- run inside `tmux` on Win5 (see `tmux` skill), send-keys / capture-pane.
+- `setsid nohup <cmd> </dev/null >/tmp/log 2>&1 &` and poll log with
+  short `ssh` commands.
+- The Sync-VM (this gateway) has faster network to GitHub for downloading
+  Ghidra. Consider doing the RE here directly (aarch64 host, `python-
+  capstone` for xref search over the raw NSO) instead of on Win5.
+
+All three candidates (A / B / C) are committed to fork for reference even
+if none proves to be the final ship.
+
