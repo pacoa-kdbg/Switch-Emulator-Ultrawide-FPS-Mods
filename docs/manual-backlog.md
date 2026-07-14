@@ -257,3 +257,16 @@ Currently set to: **B** (as of 2026-07-14 ~13:30 UTC).
    NCA VM-to-VM via `rsync` over Tailscale (much more stable than adb),
    then run hactool locally on the Sync-VM's amd/arm64 build.
 
+
+## Pokémon Sword v1.3.2 (0100ABF008968000) — UI fix RESOLVED 2026-07-14
+
+Confirmed working: `[4:3 + UI fix v1.3.2]`. World float at 0x00607664/68 pinned to 4:3 (from base 4:3 WIP), UI aspect double at 0x00607de8/dec pinned to 4:3 double (0x3FF5555555555555). Icon proportions natural, text natural, world natural. Verified on AYANEO Pocket S Mini / Eden nightly.
+
+Iterations:
+- Candidate A: UI double = 16:9 -> text OK, icons wrong (double drives sprite X-scale).
+- Candidate B: UI double = 4:3 -> WORKS.
+- Candidate C: UI double = 3:2 -> not needed; B superseded.
+
+Patch encoding for the double at 0x00607de8/dec (movk high dword of x9 via two 16-bit movk):
+- 0x00607de8: `A9AACAF2` (`movk x9, #0x5555, lsl #32`)
+- 0x00607dec: `A9FEE7F2` (`movk x9, #0x3FF5, lsl #48`)
