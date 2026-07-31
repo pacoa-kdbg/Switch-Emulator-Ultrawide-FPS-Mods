@@ -1,12 +1,13 @@
 @nsobid-A3B75BCD3311385AEED67FBEEB79CBB7BF02F471
 
-# Pokémon Sword [0100ABF008968000] v1.3.2 - 4:3 + UI candidate B
-# Iteration 2. Candidate A pinned the aspect double at 0x00607de8 to 16:9;
+# Pokémon Sword [0100ABF008968000] v1.3.2 - 4:3 + UI fix
+# Status: fully working / field verified on AYANEO Pocket S Mini + Eden nightly.
+# Candidate A pinned the aspect double at 0x00607de8 to 16:9;
 # text rendered fine, but menu icons were misaligned/mis-scaled.
 # Hypothesis: the double is used as a pre-stretch X-scale for sprite quads.
-# Pinning it to 4:3 (matching the output window) should keep icon sprites
-# at their designed proportions. If text was OK at 16:9, text likely uses
-# a different constant path and should stay OK.
+# Pinning it to 4:3 (matching the output window) keeps icon sprites at their
+# designed proportions. Battle/HUD and overworld photos confirm the mod works
+# correctly on the Pocket S Mini's native 1280x960 / 4:3 display.
 #
 # Aspect double target = 4:3 double = 0x3FF5555555555555
 #   top32 = 0x3FF55555 (low32 stays 0 from prior movz, so effective double

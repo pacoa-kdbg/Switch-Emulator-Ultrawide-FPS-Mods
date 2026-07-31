@@ -15,7 +15,13 @@ mod can be written.
    `1.777...`) or nearby projection setup, then patch to `0x3faaaaab` (4:3)
    or `0x3fc00000` (3:2). Verify HUD separately.
 
-## Pokémon Sword v1.3.2 4:3 HUD-stretch investigation (2026-07-14)
+## Pokémon Sword v1.3.2 4:3 HUD/UI fix — FULLY WORKING (2026-07-14, field-confirmed 2026-07-31)
+
+Status: **resolved / fully working** on AYANEO Pocket S Mini with Eden nightly.
+The final shipped mod is `[4:3 + UI fix v1.3.2]`, committed in `e3a0647` and
+documented in `docs/pokemon-sword-4-3-ui-fix.md` with field photos. The correct
+Pocket S Mini recommendation is 4:3 for both the world aspect float and the UI
+aspect double; emulator global stretch is not a substitute.
 
 Build ID `A3B75BCD3311385AEED67FBEEB79CBB7BF02F471`.
 
@@ -260,7 +266,7 @@ Currently set to: **B** (as of 2026-07-14 ~13:30 UTC).
 
 ## Pokémon Sword v1.3.2 (0100ABF008968000) — UI fix RESOLVED 2026-07-14
 
-Confirmed working: `[4:3 + UI fix v1.3.2]`. World float at 0x00607664/68 pinned to 4:3 (from base 4:3 WIP), UI aspect double at 0x00607de8/dec pinned to 4:3 double (0x3FF5555555555555). Icon proportions natural, text natural, world natural. Verified on AYANEO Pocket S Mini / Eden nightly.
+Confirmed fully working: `[4:3 + UI fix v1.3.2]`. World float at 0x00607664/68 pinned to 4:3 (from base 4:3 WIP), UI aspect double at 0x00607de8/dec pinned to 4:3 double (0x3FF5555555555555). Icon proportions natural, text natural, world natural. Verified on AYANEO Pocket S Mini / Eden nightly and field-confirmed again with battle/HUD and overworld photos on 2026-07-31. See `docs/pokemon-sword-4-3-ui-fix.md`.
 
 Iterations:
 - Candidate A: UI double = 16:9 -> text OK, icons wrong (double drives sprite X-scale).

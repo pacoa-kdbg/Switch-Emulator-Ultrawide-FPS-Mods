@@ -114,13 +114,17 @@ float loads to 3:2 or 4:3. These are meant for emulator testing first; HUD fixes
 are still game-specific. See `docs/narrow-aspect-research.md` for details and run
 `python3 tools/generate-narrow-aspect-mods.py` to regenerate them.
 
-### Link's Awakening v1.0.1
+### Fully working narrow-aspect fixes
 
-`generated-narrow-aspect/The Legend of Zelda Link’s Awakening [01006BB00C6F0000][mods]/`
-contains a field-verified `[4:3 v1.0.1]` for Eden stable on the AYANEO Pocket
-S Mini's native 1280x960 display, plus a build-compatible `[3:2 WIP v1.0.1]`
-that still needs visual testing on a true 3:2 window/display. See
-`docs/link-awakening-narrow-aspect.md`.
+- **The Legend of Zelda: Link's Awakening v1.0.1** on **AYANEO Pocket S Mini / Eden stable**:
+  `[4:3 v1.0.1]` is field-verified on the native 1280x960 display. The
+  build-compatible `[3:2 WIP v1.0.1]` still needs visual testing on a true 3:2
+  window/display. See `docs/link-awakening-narrow-aspect.md`.
+- **Pokémon Sword v1.3.2** on **AYANEO Pocket S Mini / Eden nightly**:
+  `[4:3 + UI fix v1.3.2]` is field-verified working on the native 1280x960
+  4:3 display. It patches both the world 4:3 float and the UI 4:3 double;
+  do not use emulator global stretch as a substitute. See
+  `docs/pokemon-sword-4-3-ui-fix.md`.
 
 ---
 
