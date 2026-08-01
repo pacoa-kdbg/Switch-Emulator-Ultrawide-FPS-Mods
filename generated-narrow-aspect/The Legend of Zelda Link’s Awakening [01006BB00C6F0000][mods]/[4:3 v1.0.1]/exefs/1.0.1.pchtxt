@@ -1,0 +1,18 @@
+@nsobid-909E904AF78AC1B8DEEFE97AB2CCDB51968F0EC7
+
+Zelda: Link's Awakening [01006BB00C6F0000] 1.0.1 - 4:3 Aspect Ratio
+
+@flag print_values
+@flag offset_shift 0x100
+
+// Verified on AYANEO Pocket S Mini (1280x960) using Eden stable.
+// Emulator setting: Aspect Ratio = 4:3 (not Stretch).
+// This replaces the arbitrary aspect-ratio float supplied by the public 21:9 v1.0.1 mod.
+// Culling remains at 16:9 intentionally to avoid edge pop-in.
+
+@enabled
+016af7d0 abaaaa3f // float 1.333333333 (4:3)
+0001092C 20D147BD // ldr s0, [x9, #0x7d0] // Aspect Ratio
+@stop
+
+// Derived from public Link's Awakening 21:9/32:9 ExeFS mods by Jaddey, KeatonTheBot, and Fl4sh9174.
