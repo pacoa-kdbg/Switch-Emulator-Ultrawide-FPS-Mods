@@ -1,0 +1,15 @@
+@nsobid-B424BE150A8E7D78701CBE7A439D9EBF
+
+# Super Mario Odyssey [0100000000010000] v1.3.0 - Disable Dynamic Resolution
+
+@flag print_values
+@flag offset_shift 0x100
+
+// Disables dynamic resolution.
+// Imported from Paco's Nova pack on 2026-08-01; not device-validated.
+
+@enabled
+005EE438 1F2003D5
+@stop
+
+@theboy181

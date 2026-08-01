@@ -1,0 +1,18 @@
+@nsobid-D9BA7DB72FFAFECD07F5F5535DEC05734E59BCE1
+
+# Kirby and the Forgotten Land [01004D300C5AE000] v1.0.0 - Disable Dynamic Resolution v2
+
+@flag print_values
+@flag offset_shift 0x100
+
+// Stops changes to the internal 1600x900 resolution.
+// Imported from Paco's Nova pack on 2026-08-01; not device-validated.
+
+@enabled
+00744BB0 39000014
+@stop
+
+@theboy181
+https://linktr.ee/theboy181
+
+Special Thanks to @Morph and team yuzu!

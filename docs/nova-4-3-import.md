@@ -23,5 +23,15 @@ matches the existing `[4:3 WIP v1.0.1] 4:3 WIP Camera` v1.0.0 patch payload.
 - **Kirby and the Forgotten Land v1.0.0** and **Luigi's Mansion 3 v1.4.0** —
   both explicitly identify themselves as **1.375 / 11:8**, not 4:3.
 
-Non-aspect patches from the archive (60 FPS, dynamic-resolution, DOF, cursor,
-and FXAA changes) were intentionally excluded.
+## Included performance and visual patches
+
+All of these are labelled by their actual function and version, rather than as
+aspect-ratio mods:
+
+- Captain Toad: Treasure Tracker v1.3.0 — Disable Depth of Field; Disable
+  On-Screen Cursor
+- Kirby and the Forgotten Land v1.0.0 — 60 FPS Full; Disable Dynamic
+  Resolution v2
+- Metroid Dread v2.1.0 — 60 FPS + Cutscene Fix (two build-ID-specific patches
+  kept together in one mod folder)
+- Super Mario Odyssey v1.3.0 — Disable Dynamic Resolution; Disable FXAA

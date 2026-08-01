@@ -1,0 +1,20 @@
+@nsobid-D9BA7DB72FFAFECD07F5F5535DEC05734E59BCE1
+
+# Kirby and the Forgotten Land [01004D300C5AE000] v1.0.0 - 60 FPS Full
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 60 FPS, including distant animations.
+// Imported from Paco's Nova pack on 2026-08-01; not device-validated.
+
+@enabled
+005330D8 0C000014
+00533110 36008052
+007F0D1C 11000014
+@stop
+
+@theboy181
+https://linktr.ee/theboy181
+
+Special Thanks to @Morph and team yuzu!
