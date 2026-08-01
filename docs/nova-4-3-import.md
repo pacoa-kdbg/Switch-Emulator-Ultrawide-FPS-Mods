@@ -15,13 +15,13 @@ Use only one aspect-ratio mod per title at a time.
 Mario vs. Donkey Kong v1.0.0 was not imported again: the supplied 4:3 patch
 matches the existing `[4:3 WIP v1.0.1] 4:3 WIP Camera` v1.0.0 patch payload.
 
-## Deliberately not labelled 4:3
+## Nova aspect-ratio notes
 
-- **Captain Toad: Treasure Tracker v1.3.0** — its title says 4:3, but its
-  internal comment says `32:9`; it needs source/runtime verification before
-  adding it as a 4:3 patch.
+- **Captain Toad: Treasure Tracker v1.3.0** — included under its supplied
+  `4:3 Source Label` name. Its source folder/title say 4:3 while an internal
+  comment says `32:9`; the patch payload is preserved unchanged.
 - **Kirby and the Forgotten Land v1.0.0** and **Luigi's Mansion 3 v1.4.0** —
-  both explicitly identify themselves as **1.375 / 11:8**, not 4:3.
+  included and accurately labelled as **1.375 / 11:8**, not 4:3.
 
 ## Included performance and visual patches
 

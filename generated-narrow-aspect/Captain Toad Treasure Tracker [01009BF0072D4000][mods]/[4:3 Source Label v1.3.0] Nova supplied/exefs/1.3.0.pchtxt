@@ -1,0 +1,21 @@
+@nsobid-8F75C9B8B7FF69D96D6FBD6533A5930120985B2D
+
+// nsobid found in main @ offset 0x40
+
+# Captain Toad: Treasure Tracker [01009BF0072D4000] v1.3.0 - 4:3 Aspect Ratio (source label)
+
+@flag print_values
+@flag offset_shift 0x100
+
+// Source folder and title label this as 4:3. Its internal source comment says
+// "32:9 Aspect Ratio"; the original payload is preserved unchanged.
+// Useful for playing on 4:3 CRT monitors.
+// Enable the "stretch to window" function in your emulator for this mod to work properly.
+// Imported from Paco's Nova pack on 2026-08-01; tested by Paco.
+
+@enabled
+0038E930 00D02E1E
+@stop
+
+// victoria4dx
+// https://github.com/victoria4dx/switch-mods
