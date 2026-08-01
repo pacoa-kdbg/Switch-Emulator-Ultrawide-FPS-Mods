@@ -1,0 +1,16 @@
+@nsobid-F48BD40D89B529C114F17C7909FE6AA4
+
+# Donkey Kong Country Tropical Freeze [0100C1F0051B6000] v1.0.2 - 4:3
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 Aspect Ratio
+// Use stretch to window option in emulator.
+// Imported from Paco's Nova pack on 2026-08-01; WIP and not device-validated.
+
+@enabled
+0151f1a8 abaaaa3f
+002dd344 7EFCA752
+002dd348 C003271E
+@stop

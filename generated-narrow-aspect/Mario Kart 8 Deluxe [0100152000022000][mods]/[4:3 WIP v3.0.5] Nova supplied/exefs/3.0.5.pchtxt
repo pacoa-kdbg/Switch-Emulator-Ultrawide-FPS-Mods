@@ -1,0 +1,18 @@
+@nsobid-FE941ED5BA14BE5D505698DA1BBF4FE7
+
+# Mario Kart 8 Deluxe [0100152000022000] v3.0.5 - 4:3
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 Aspect Ratio.
+// Imported from Paco's Nova pack on 2026-08-01; WIP and not device-validated.
+
+@enabled
+003cb1ac 7e559552
+003cb1b0 5ef5a772
+003cb1b4 C003271E
+@stop
+
+// Generated using AnyAspectRatio by Fayaz
+// https://aar.fayaz.one

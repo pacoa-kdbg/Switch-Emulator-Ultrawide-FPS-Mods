@@ -1,0 +1,19 @@
+@nsobid-B424BE150A8E7D78701CBE7A439D9EBF
+
+# Super Mario Odyssey [0100000000010000] v1.3.0 - 4:3 Aspect Ratio
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 4:3 Aspect Ratio.
+// Enable the "stretch to window" function in your emulator for this mod to work properly.
+// Imported from Paco's Nova pack on 2026-08-01; WIP and not device-validated.
+
+@enabled
+0074D2EC 00D02E1E
+@stop
+
+// victoria4dx
+// https://github.com/victoria4dx/switch-mods
+// Thank you to theboy181 for making the original ultrawide mod for version 1.0.0.
+// https://linktr.ee/theboy181

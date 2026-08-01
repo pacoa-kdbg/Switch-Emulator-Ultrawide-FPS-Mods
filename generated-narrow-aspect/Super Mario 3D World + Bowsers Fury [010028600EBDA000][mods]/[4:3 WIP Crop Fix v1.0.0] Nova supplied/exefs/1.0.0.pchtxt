@@ -1,0 +1,20 @@
+@nsobid-9F7EFC2FB9653E5CDE03030478F23EDA7D18EF44
+
+# Super Mario 3D World + Bowser's Fury [010028600EBDA000] v1.0.0 - 4:3 (Crop Fix)
+
+@flag print_values
+@flag offset_shift 0x100
+
+// 3D Engine Projection: 1.375 (hardware constraint).
+// 2D UI & HUD Boundaries: 2.333 (pulls UI inward to survive 4:3 window cropping).
+// Enable the "stretch to window" function in your emulator for this mod to work properly.
+// Imported from Paco's Nova pack on 2026-08-01; WIP and not device-validated.
+
+@enabled
+008FADE0 00D02E1E
+009692D0 03D02E1E
+0091CFC8 A9AA8AD2
+0091CFCC A902A8F2
+008B6C1C A8AA8A52
+008B6C20 A802A872
+@stop
