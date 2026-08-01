@@ -148,28 +148,12 @@ see `docs/narrow-aspect-research.md` and run
 
 ---
 
-## Support
+## Credits and sources
 
-All mods here are free.
-
-If this repository helped you, improved your emulator experience, or saved you time, you can support the project here:
-
-- **Ko-fi:** https://ko-fi.com/fl4sh9174
-
-Support helps me:
-- update older mods
-- add support for new games
-- test more emulator versions
-- improve ultrawide, FPS, and resolution compatibility
-
----
-
-## Contact
-
-- **GitHub:** https://github.com/Fl4sh9174
+- **Original mod source and special thanks:** [theboy181/switch-ptchtxt-mods](https://github.com/theboy181/switch-ptchtxt-mods)
+- **GitHub:** https://github.com/FI4sh9174
 - **Ko-fi:** https://ko-fi.com/fl4sh9174
 - **GameBanana:** https://gamebanana.com/members/3083977
-- **Discord:** `Fl4sh_#9174`
 
 ---
 
