@@ -106,25 +106,45 @@ Not every game includes every option.
 - In many cases, all included files are required for the mod to work correctly
 - If a mod is broken after a game update, make sure the **game version**, and **mod version** still match
 
-### 3:2 and 4:3 WIP candidates
+### Narrow-aspect behavior
 
-This fork includes generated narrow-aspect candidates under `generated-narrow-aspect/`.
-They are made from existing 21:9 `.pchtxt` mods by changing obvious aspect-ratio
-float loads to 3:2 or 4:3. These are meant for emulator testing first; HUD fixes
-are still game-specific. See `docs/narrow-aspect-research.md` for details and run
+The 3:2 and 4:3 mods in `generated-narrow-aspect/` target the **game world**:
+when a patch is compatible, in-game models and 3D rendering should use the
+selected aspect ratio/resolution rather than being stretched from the original
+widescreen view.
+
+**HUD and menus are a separate system in most games.** They commonly remain
+configured for the original widescreen layout, so they may stretch, squish,
+crop, or misalign even when the game world looks correct. Treat a HUD/UI fix as
+an extra feature—not an assumption. The exceptions below explicitly identify
+when both world and UI were verified.
+
+### Test status
+
+**Tested** means Paco verified the listed game/mod combination in an emulator at
+its intended display/aspect configuration. A tested status does **not** mean the
+HUD is perfect unless the entry specifically says it has a HUD/UI fix. Every
+other game or mod in this repository is **not yet tested by this fork**.
+
+| Game / mod set | Status | Notes |
+| --- | --- | --- |
+| Captain Toad: Treasure Tracker v1.3.0 — Nova pack | Tested | Supplied 4:3, depth-of-field, and cursor patches tested. The 4:3 patch’s conflicting internal aspect comment remains documented in `docs/nova-4-3-import.md`. |
+| Donkey Kong Country: Tropical Freeze v1.0.2 — Nova 4:3 | Tested | World/aspect test; HUD behavior can vary. |
+| Kirby and the Forgotten Land v1.0.0 — Nova pack | Tested | Supplied 1.375 aspect, 60 FPS Full, and dynamic-resolution patches tested. |
+| Luigi's Mansion 3 v1.4.0 — Nova 1.375 aspect | Tested | 1.375 / 11:8; it is not labelled as 4:3. |
+| Mario Kart 8 Deluxe v3.0.5 — Nova 4:3 | Tested | World/aspect test; HUD behavior can vary. |
+| Mario vs. Donkey Kong v1.0.0 — Nova 4:3 | Tested | The supplied payload matches the existing 4:3 camera variant. |
+| Metroid Dread v2.1.0 — Nova pack | Tested | 1280x960 4:3 and paired 60 FPS + cutscene-fix patches tested. |
+| Super Mario 3D World + Bowser's Fury v1.0.0 — Nova 4:3 crop fix | Tested | Uses a 1.375 engine projection plus UI/HUD-boundary changes for 4:3-window cropping. |
+| Super Mario Odyssey v1.3.0 — Nova pack | Tested | 4:3, dynamic-resolution, and FXAA patches tested. |
+| Pokémon Sword v1.3.2 — `[4:3 + UI fix]` | Tested — HUD/UI fixed | Field-verified on AYANEO Pocket S Mini / Eden nightly at native 1280x960. Both the world 4:3 float and UI 4:3 double are patched. See `docs/pokemon-sword-4-3-ui-fix.md`. |
+| Super Mario Bros. Wonder | Tested | Current repository mod set tested; HUD/UI behavior remains game/mod-specific. |
+| The Legend of Zelda: Link's Awakening v1.0.1 — `[4:3]` | Tested | Field-verified on AYANEO Pocket S Mini / Eden stable at native 1280x960. `[3:2 WIP]` still needs true-3:2 visual testing. See `docs/link-awakening-narrow-aspect.md`. |
+
+The Nova archive import, labels, and deliberately excluded non-4:3 aspect
+patches are documented in `docs/nova-4-3-import.md`. For generated candidates,
+see `docs/narrow-aspect-research.md` and run
 `python3 tools/generate-narrow-aspect-mods.py` to regenerate them.
-
-### Fully working narrow-aspect fixes
-
-- **The Legend of Zelda: Link's Awakening v1.0.1** on **AYANEO Pocket S Mini / Eden stable**:
-  `[4:3 v1.0.1]` is field-verified on the native 1280x960 display. The
-  build-compatible `[3:2 WIP v1.0.1]` still needs visual testing on a true 3:2
-  window/display. See `docs/link-awakening-narrow-aspect.md`.
-- **Pokémon Sword v1.3.2** on **AYANEO Pocket S Mini / Eden nightly**:
-  `[4:3 + UI fix v1.3.2]` is field-verified working on the native 1280x960
-  4:3 display. It patches both the world 4:3 float and the UI 4:3 double;
-  do not use emulator global stretch as a substitute. See
-  `docs/pokemon-sword-4-3-ui-fix.md`.
 
 ---
 
