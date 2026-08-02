@@ -137,6 +137,7 @@ other game or mod in this repository is **not yet tested by this fork**.
 | Metroid Dread v2.1.0 — Nova pack | Tested | 1280x960 4:3 and paired 60 FPS + cutscene-fix patches tested. |
 | Super Mario 3D World + Bowser's Fury v1.0.0 — Nova 4:3 crop fix | Tested | Uses a 1.375 engine projection plus UI/HUD-boundary changes for 4:3-window cropping. |
 | Super Mario Odyssey v1.3.0 — Nova pack | Tested | 4:3, dynamic-resolution, and FXAA patches tested. |
+| Super Smash Bros. Ultimate v13.0.4 — `[4:3 WIP] [21.9 Original Camera]` | Tested — fights working | The 4:3 patch was verified working in fights. |
 | Pokémon Sword v1.3.2 — `[4:3 + UI fix]` | Tested — HUD/UI fixed | Field-verified on AYANEO Pocket S Mini / Eden nightly at native 1280x960. Both the world 4:3 float and UI 4:3 double are patched. See `docs/pokemon-sword-4-3-ui-fix.md`. |
 | Super Mario Bros. Wonder | Tested | Current repository mod set tested; HUD/UI behavior remains game/mod-specific. |
 | The Legend of Zelda: Link's Awakening v1.0.1 — `[4:3]` | Tested | Field-verified on AYANEO Pocket S Mini / Eden stable at native 1280x960. `[3:2 WIP]` still needs true-3:2 visual testing. See `docs/link-awakening-narrow-aspect.md`. |
