@@ -1,0 +1,29 @@
+@nsobid-AEE8F150DDA1B5A838806E1A5EA6827AD9F3C51E
+
+# Pokémon Legends: Arceus [01001F5010DFA000] v1.1.1 - 4:3 Aspect Only
+
+@flag print_values
+@flag offset_shift 0x100
+
+// Tested on AYANEO Pocket S Mini / Eden Android.
+// Reduced 4:3 patch: only replace repeated aspect-ratio float immediates with 4:3 (0x3faaaaab).
+// This intentionally omits the previous WIP HUD trampoline/code-cave section that caused black screen / 0 FPS.
+// Use stretch-to-window / Stretch aspect ratio in the emulator.
+@enabled
+01261b98 68559552 // mov w8, #0xaaab
+01261b9c 48F5A772 // movk w8, #0x3faa, lsl #16
+0191ddd0 68559552 // mov w8, #0xaaab
+0191ddd4 48F5A772 // movk w8, #0x3faa, lsl #16
+019336bc 68559552 // mov w8, #0xaaab
+019336c0 48F5A772 // movk w8, #0x3faa, lsl #16
+02750654 68559552 // mov w8, #0xaaab
+02750658 48F5A772 // movk w8, #0x3faa, lsl #16
+0124edfc 69559552 // mov w9, #0xaaab
+0124ee00 49F5A772 // movk w9, #0x3faa, lsl #16
+0194a65c 69559552 // mov w9, #0xaaab
+0194a660 49F5A772 // movk w9, #0x3faa, lsl #16
+@stop
+
+@Fl4sh_#9174
+https://github.com/Fl4sh9174
+https://Ko-fi.com/Fl4sh9174
